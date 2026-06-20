@@ -15,7 +15,7 @@ st.title("Persona-Adaptive Customer Support Agent")
 
 # ChromaDB
 chroma_client = chromadb.PersistentClient(path="./chroma_db")
-collection = chroma_client.get_collection(name="support_kb")
+collection = chroma_client.get_or_create_collection(name="support_kb")
 
 
 def retrieve_context(query):
